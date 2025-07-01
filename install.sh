@@ -10,19 +10,20 @@ iwallive() {
 
   # Phase 2
   cd /opt/wallive/
+  chmod +x ./wallive
   echo "Creating symlink ..."
   echo "wallive -> /usr/bin/"
-  sudo ln wallive /usr/bin/
+  sudo ln ./wallive /usr/bin/
   echo "wallive.desktop -> /usr/share/applications/"
-  sudo ln wallive.desktop /usr/share/applications/
+  sudo ln ./wallive.desktop /usr/share/applications/
   echo "Done."
 
   # Phase 3
   echo "Creating systemd service ..."
-  sudo mv wallive.service /home/$USER/.config/systemd/user/
+  sudo mv ./wallive.service /home/$USER/.config/systemd/user/
   cd /home/$USER/.config/systemd/user/
-  sudo chown $USER wallive.service
-  sudo chgrp $USER wallive.service
+  sudo chown $USER ./wallive.service
+  sudo chgrp $USER ./wallive.service
   systemctl --user daemon-reexec
   systemctl --user enable --now wallive.service
   echo "Done."
