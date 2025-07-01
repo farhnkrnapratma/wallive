@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mpvpaper -vs -o "no-audio loop" eDP-1 /opt/wallive/wallpaper/wallpaper-1.mp4

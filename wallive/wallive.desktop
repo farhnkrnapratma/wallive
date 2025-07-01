@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Wallpaper Live
+GenericName=Wallpaper
+Icon=/opt/wallive/icon/icon.png
+TryExec=wallive
+Exec=wallive
+Terminal=true
+Categories=Utility;Appearance;Personalization;
