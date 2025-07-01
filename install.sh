@@ -9,7 +9,7 @@ iwallive() {
   echo "Done."
 
   # Phase 2
-  cd /opt/wallive
+  cd /opt/wallive/
   echo "Creating symlink ..."
   echo "wallive -> /usr/bin/"
   sudo ln wallive /usr/bin/
@@ -19,8 +19,10 @@ iwallive() {
 
   # Phase 3
   echo "Creating systemd service ..."
-  cd /opt/wallive/service/
-  sudo ln wallive.service /home/$USER/.config/systemd/user/
+  sudo mv wallive.service /home/$USER/.config/systemd/user/
+  cd /home/$USER/.config/systemd/user/
+  sudo chown $USER wallive.service
+  sudo chgrp $USER wallive.service
   systemctl --user daemon-reexec
   systemctl --user enable --now wallive.service
   echo "Done."
