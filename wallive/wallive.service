@@ -3,6 +3,7 @@ Description=My custom wallpaper live
 After=graphical-session.target
 
 [Service]
+Type=simple
 ExecStart=/usr/bin/wallpaperlive
 Restart=on-failure
 

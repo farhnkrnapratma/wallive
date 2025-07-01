@@ -2,6 +2,8 @@
 
 echo "Wallive v1.0-20250701 - Installation"
 
+chmod +x ./uninstall.sh
+
 iwallive() {
   # Phase 1
   echo "Copying wallive -> /opt/ ..."
@@ -10,7 +12,7 @@ iwallive() {
 
   # Phase 2
   cd /opt/wallive/
-  chmod +x ./wallive
+  sudo chmod +x ./wallive
   echo "Creating symlink ..."
   echo "wallive -> /usr/bin/"
   sudo ln ./wallive /usr/bin/
