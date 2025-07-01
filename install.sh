@@ -20,7 +20,7 @@ iwallive() {
 
   # Phase 3
   echo "Creating systemd service ..."
-  sudo mv ./wallive.service /home/$USER/.config/systemd/user/
+  sudo cp ./wallive.service /home/$USER/.config/systemd/user/
   cd /home/$USER/.config/systemd/user/
   sudo chown $USER ./wallive.service
   sudo chgrp $USER ./wallive.service
